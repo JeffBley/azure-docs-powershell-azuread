@@ -42,7 +42,7 @@ PS C:\> Set-MsolUser -UserPrincipalName "davidchew@contoso.com" -BlockCredential
 ```
 
 This command sets block credential to $True for a user, which blocks them from being able to sign in.
-This cannot be done for a synced user.
+This should not be done for a synced user. If the synced user is not disabled in Active Directory then by default, during the next AD Connect sync cycle, this attribute will be overwritten and the user will be allowed to sign in again.
 
 ### Example 2: Update display name
 ```
